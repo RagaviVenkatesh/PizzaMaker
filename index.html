@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Creator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>🍕 Build Your Perfect Pizza</h1>
+
+        <div class="builder-container">
+            <div class="options-panel">
+                <div class="step">
+                    <h3>1. Choose Your Crust</h3>
+                    <div class="options-grid">
+                        <button class="option-btn" data-crust="regular">
+                            <img src="images/crust.png" alt="Regular">
+                            <span>Regular</span>
+                        </button>
+                        <button class="option-btn" data-crust="thin">
+                            <img src="images/crust.png" alt="Thin">
+                            <span>Thin</span>
+                        </button>
+                        <button class="option-btn" data-crust="thick">
+                            <img src="images/crust.png" alt="Thick">
+                            <span>Thick</span>
+                        </button>
+                        <button class="option-btn" data-crust="cheese">
+                            <img src="images/crust.png" alt="Cheese-Stuffed">
+                            <span>Cheese-Stuffed</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <h3>2. Choose Your Sauce</h3>
+                    <div class="options-grid">
+                        <button class="option-btn" data-sauce="tomato">
+                            <img src="images/sauce.png" style="background-color: #c72c00;">
+                            <span>Tomato</span>
+                        </button>
+                        <button class="option-btn" data-sauce="pesto">
+                            <img src="images/sauce.png" style="background-color: #7a9f35;">
+                            <span>Pesto</span>
+                        </button>
+                        <button class="option-btn" data-sauce="white">
+                            <img src="images/sauce.png" style="background-color: #f5f5dc;">
+                            <span>White</span>
+                        </button>
+                        <button class="option-btn" data-sauce="none">
+                            <img src="images/sauce.png" style="background-color: transparent;">
+                            <span>None</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <h3>3. Add Toppings</h3>
+                    <p class="subtext">(Click to add/remove)</p>
+                    <div class="options-grid">
+                        <button class="option-btn topping-option" data-topping="pepperoni">
+                            <img src="images/pepperoni.png" alt="Pepperoni">
+                            <span>Pepperoni</span>
+                        </button>
+                        <button class="option-btn topping-option" data-topping="mushroom">
+                            <img src="images/mushroom.png" alt="Mushrooms">
+                            <span>Mushrooms</span>
+                        </button>
+                        <button class="option-btn topping-option" data-topping="olive">
+                            <img src="images/olive.png" alt="Olives">
+                            <span>Olives</span>
+                        </button>
+                        <button class="option-btn topping-option" data-topping="onion">
+                            <img src="images/onion.png" alt="Onions">
+                            <span>Onions</span>
+                        </button>
+                        <button class="option-btn topping-option" data-topping="pepper">
+                            <img src="images/pepper.png" alt="Peppers">
+                            <span>Peppers</span>
+                        </button>
+                        <button class="option-btn topping-option" data-topping="sausage">
+                            <img src="images/sausage.png" alt="Sausage">
+                            <span>Sausage</span>
+                        </button>
+                        <button class="option-btn topping-option" data-topping="bacon">
+                            <img src="images/bacon.png" alt="Bacon">
+                            <span>Bacon</span>
+                        </button>
+                        <button class="option-btn topping-option" data-topping="pineapple">
+                            <img src="images/pineapple.png" alt="Pineapple">
+                            <span>Pineapple</span>
+                        </button>
+                        <button class="option-btn topping-option" data-topping="basil">
+                            <img src="images/basil.png" alt="Basil">
+                            <span>Basil</span>
+                        </button>
+                        <button class="option-btn topping-option" data-topping="garlic">
+                            <img src="images/garlic.png" alt="Garlic">
+                            <span>Garlic</span>
+                        </button>
+                        <button class="option-btn topping-option" data-topping="ham">
+                            <img src="images/ham.png" alt="Ham">
+                            <span>Ham</span>
+                        </button>
+                        <button class="option-btn topping-option" data-topping="chicken">
+                            <img src="images/chicken.png" alt="Chicken">
+                            <span>Chicken</span>
+                        </button>
+                        <button class="option-btn topping-option" data-topping="spinach">
+                            <img src="images/spinach.png" alt="Spinach">
+                            <span>Spinach</span>
+                        </button>
+                        <button class="option-btn topping-option" data-topping="jalapeno">
+                            <img src="images/jalapeno.png" alt="Jalapeño">
+                            <span>Jalapeño</span>
+                        </button>
+                    </div>
+                </div>
+
+                <button id="reset-btn" class="reset-btn">Reset Pizza</button>
+            </div>
+
+            <div class="pizza-display-container">
+                <div class="pizza-display">
+                    <div class="pizza-crust"></div>
+                    <div class="pizza-base"></div>
+                    <div class="pizza-sauce"></div>
+                    <!-- Toppings will be added here dynamically -->
+                </div>
+
+                <div class="pizza-summary">
+                    <h3>Your Pizza</h3>
+                    <div class="summary-item">
+                        <strong>Crust:</strong> <span id="crust-summary">Not selected</span>
+                    </div>
+                    <div class="summary-item">
+                        <strong>Sauce:</strong> <span id="sauce-summary">Not selected</span>
+                    </div>
+                    <div class="summary-item">
+                        <strong>Toppings:</strong> <span id="toppings-summary">None</span>
+                    </div>
+                    <div class="summary-item">
+                        <strong>Total Price:</strong> $<span id="price-summary">0.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
